@@ -42,15 +42,15 @@ public class UserInfoData {
 		}
 		strResult = gson.toJson(result);
 		
-		Complex complex = new Complex();
-		complex.cStr = "测试";
-		complex.cReslut = result;
-		for(int i = 0; i < 3; i++){
-			complex.cStrList.add("string:"+i);
-			complex.cResultList.add(result);
-		}
-		strResult = gson.toJson(complex.cStr);
-		System.out.println(strResult);
+//		Complex complex = new Complex();
+//		complex.cStr = "测试";
+//		complex.cReslut = result;
+//		for(int i = 0; i < 3; i++){
+//			complex.cStrList.add("string:"+i);
+//			complex.cResultList.add(result);
+//		}
+//		strResult = gson.toJson(complex.cStr);
+//		System.out.println(strResult);
 		return strResult;
 	}
 
