@@ -252,3 +252,27 @@ SELECT top 5 * FROM CONTENT order by id des [42000-188]
 2015-08-26 14:37:45 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT TOP 5 * FROM CONTENT WHERE ID IN ( SELECT TOP 15 ID FROM CONTENT DESC) ASC[*] "; SQL statement:
 select top 5 * from content where id in ( select top 15 id from content desc) asc [42000-188]
+2015-08-26 21:49:06 database: wrong user or password; user: "FISHER"
+org.h2.message.DbException: Wrong user name or password [28000-188]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:106)
+	at org.h2.engine.Engine.openSession(Engine.java:175)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:153)
+	at org.h2.engine.Engine.createSession(Engine.java:136)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.test(WebApp.java:893)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-188]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more

@@ -28,11 +28,12 @@ public class H2Manager {
 		int i;
 		sql = "select * from test";
 		sql = "select * from userinfo where username='fisher' and password='123'";
+		sql = "select * from content";
 		rs = manager.executeQuery(sql);
 		i = 1;
 		try {
 			while (rs.next()) {
-				System.out.println(i++ + ":" + rs.getString("username"));
+				System.out.println(i++ + ":" + rs.getString("imgurl"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
