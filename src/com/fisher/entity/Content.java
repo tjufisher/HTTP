@@ -13,5 +13,4 @@ public class Content {
 	public Integer sellNum;
 	public String tag;
 	public String adUrl;
-	public Result result;
 }

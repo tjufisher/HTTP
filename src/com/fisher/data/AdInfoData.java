@@ -32,7 +32,7 @@ public class AdInfoData {
 		Result result = new Result();
 		
 		try {
-			while(rs.next()){
+			while(rs.next()){//从1开始，不是0！！！
 				AdInfo adInfo = new AdInfo();
 				System.out.println(rs.getString(1));
 				System.out.println(rs.getString(2));

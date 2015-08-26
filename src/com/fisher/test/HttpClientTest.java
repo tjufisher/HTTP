@@ -86,6 +86,22 @@ public class HttpClientTest {
 		
 	}
 	
+	public void testHomeList(){
+		Map<String,String> map = new HashMap<String,String>();
+		map.put(Constanse.MESSAGE_NAME, "getHomeVpAd");
+		map.put("category", "home_vp_ad");
+		String strResponse = doPost(map);
+		Gson gson = new Gson();
+		
+		java.lang.reflect.Type type = new TypeToken<QueryBeanAndList<AdInfo,Result>>() {}.getType();  
+		QueryBeanAndList<AdInfo,Result> result = gson.fromJson(strResponse, type);
+		
+		Result r = (Result)result.bean;
+		System.out.println(result.list.size());
+		System.out.println(r.result);
+		System.out.println(r.message);
+	}
+	
 	public String buildParameters(Map<String,String> map){
 		StringBuilder sb = new StringBuilder();
 		for(Map.Entry<String, String> entry : map.entrySet()){

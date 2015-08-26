@@ -13,10 +13,12 @@ public class Constanse {
 		methodMap = new HashMap<String,String>();
 		String message = "login,"
 				+ "logout,"
-				+ "getHomeVpAd";
+				+ "getHomeVpAd,"
+				+ "getHomeList";
 		String invokeClass = "com.fisher.data.UserInfoData/login,"
 				+ "com.fisher.data.UserInfoData/logout,"
-				+ "com.fisher.data.AdInfoData/getHomeVpAd";
+				+ "com.fisher.data.AdInfoData/getHomeVpAd,"
+				+ "com.fisher.data.HomeContentInfoData/getHomeList";
 		String[] str1 = message.split(",");
 		String[] str2 = invokeClass.split(",");
 		if( str1.length == str2.length){
