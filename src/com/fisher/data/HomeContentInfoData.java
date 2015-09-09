@@ -35,9 +35,32 @@ public class HomeContentInfoData {
 		
 		
 		H2Manager manager = new H2Manager();
+		
+		String countSql = "select count(*) from content;";
+		ResultSet countRs = manager.executeQuery(countSql);
+		int count = 0;
+		try {
+			if( countRs.next()){
+				count = countRs.getInt(1);
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		System.out.println("数据库总数据行数：" + count);
+		int selectRows = rows;//取得返回的行数
+		if( ( times + 1) * rows > count ){
+			if(times * rows > count){
+				selectRows = 0;
+			}else{
+				selectRows = count - times * rows;
+			}
+		}else{
+			selectRows = rows;
+		}
 		//逆序取得，rows * times 到  ( times + 1) * rows行的数据
 		String sql = "select * from( select top "
-				+ rows
+				+ selectRows
 				+ " * from ( select top "
 				+ ( times + 1) * rows
 				+ " * from content  order by id desc )  order by id asc) order by id desc;" ;
