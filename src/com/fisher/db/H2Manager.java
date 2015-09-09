@@ -33,7 +33,7 @@ public class H2Manager {
 		i = 1;
 		try {
 			while (rs.next()) {
-				System.out.println(i++ + ":" + rs.getString("imgurl"));
+				System.out.println(i++ + ":" + rs.getString("latitude"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
