@@ -2,6 +2,7 @@ package com.fisher.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -17,18 +18,23 @@ public class GetDataServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException { 
-		super.doGet(request, response);
 		System.out.println("get");
+		doMethod(request, response);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		System.out.println("post");
+		doMethod(request, response);
+	}
 	
+	public void doMethod(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException{
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		Constanse c = new Constanse();
-		System.out.println("post");
+		
 		String messageName = request.getParameter("messageName").trim();
 		System.out.println("messageName:" + messageName);
 
@@ -63,13 +69,10 @@ public class GetDataServlet extends HttpServlet {
 		}
 		
 		
-		
-		
 		PrintWriter out = response.getWriter();
         out.println(result);
         out.flush();
         out.close();
-		
 	}
 
 }
