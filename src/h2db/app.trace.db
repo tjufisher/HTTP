@@ -1,0 +1,12 @@
+2015-09-18 10:19:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM CONTENT ORDER BY ID DES[*] "; SQL statement:
+SELECT * FROM CONTENT order by id des [42000-188]
+2015-09-18 10:19:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM CONTENT ORDER BY ID INC[*] "; SQL statement:
+SELECT * FROM CONTENT order by id inc [42000-188]
+2015-09-18 10:19:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM CONTENT ORDER BY ID INS[*] "; SQL statement:
+SELECT * FROM CONTENT order by id ins [42000-188]
+2015-09-18 10:19:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM CONTENT ORDER BY ID INC[*] "; SQL statement:
+SELECT * FROM CONTENT order by id inc [42000-188]
